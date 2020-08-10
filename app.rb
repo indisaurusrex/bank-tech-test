@@ -4,6 +4,6 @@ class BankAccount
   end
 
   def statement
-    "date || credit || debit || balance\n14/01/2020 || 1000.00 || || 1000.00"
+    print "date || credit || debit || balance"
   end
 end
