@@ -1,9 +1,17 @@
 class BankAccount
+  def initialize
+    @statement = ["date || credit || debit || balance"]
+  end
+
   def deposit(amount, date)
-    
+    @statement.push("#{date} || #{amount}.00 || || #{amount}.00")
+  end
+
+  def print_statement
+    puts @statement
   end
 
   def statement
-    print "date || credit || debit || balance"
+    return @statement
   end
 end
