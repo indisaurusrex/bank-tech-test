@@ -15,6 +15,11 @@ describe 'BankAccount' do
       account.deposit(1000, "14/01/2020")
       expect(account.statement).to include("14/01/2020 || 1000.00 || || 1000.00")
     end
+
+    it 'does not accept dates in the future' do
+      account = BankAccount.new
+      expect { account.deposit(1000, "14/01/2024") }.to raise_error "Please enter a date in the past"
+    end
   end
   
 end
