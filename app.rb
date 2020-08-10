@@ -1,23 +1,33 @@
 require 'date'
 
 class BankAccount
-attr_accessor :statement
+attr_accessor :balance
 
   def initialize
-    @statement = ["date || credit || debit || balance"]
+    @transactions = []
+    @balance = 0
   end
 
   def deposit(amount, date)
     deposit_date = Date.parse(date)
     if deposit_date >= Date.today
       raise "Please enter a date in the past"
-    else
-      @statement.push("#{deposit_date.strftime('%d/%m/%Y')} || #{amount}.00 || || #{amount}.00")
     end
+
+    @balance += amount
+  end
+
+  def withdraw(amount, date)
+    @balance -= amount
   end
 
   def print_statement
-    puts @statement
+    puts "date || credit || debit || balance"
+    # if @statement.length >= 1
+    #   @statement.each do |line|
+    #     puts "#{line[0].strftime('%d/%m/%Y')} || #{'%.2f' % line[1]} || || #{'%.2f' % line[4]}"
+    #   end
+    # end
   end
 
 end
