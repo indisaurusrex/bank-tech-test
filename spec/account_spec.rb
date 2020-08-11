@@ -15,12 +15,12 @@ describe 'BankAccount' do
       account = BankAccount.new
       account.deposit(1000, "14/01/2020")
       account.deposit(100, "5/06/2020")
-      expect(account.balance).to eq(1100)
-    end
-
-    it 'does not accept dates in the future' do
-      account = BankAccount.new
-      expect { account.deposit(1000, "14/01/2024") }.to raise_error "Please enter a date in the past"
+      statement = <<~STATEMENT
+        date || credit || debit || balance
+        05/06/2020 || 100.00 || || 1100.00
+        14/01/2020 || 1000.00 || || 1000.00
+        STATEMENT
+      expect { account.print_statement }.to output(statement).to_stdout
     end
   end
 
@@ -29,7 +29,12 @@ describe 'BankAccount' do
       account = BankAccount.new
       account.deposit(1000, "14/01/2020")
       account.withdraw(500, "5/06/2020")
-      expect(account.balance).to eq(500)
+      statement = <<~STATEMENT
+        date || credit || debit || balance
+        05/06/2020 || || 500.00 || 500.00
+        14/01/2020 || 1000.00 || || 1000.00
+        STATEMENT
+      expect { account.print_statement }.to output(statement).to_stdout
     end
   
   end
