@@ -2,7 +2,7 @@ require './app'
 
 describe BankAccount do
   describe '#print_statement' do
-    it 'prints a blank statement for a new account' do
+    it 'can print a blank statement for a new account' do
       expect do
         BankAccount.new.print_statement
       end.to output("date || credit || debit || balance\n").to_stdout

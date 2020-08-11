@@ -7,16 +7,12 @@ class BankAccount
   end
 
   def deposit(amount, date)
-    # updates the current balance of the account
     @balance += amount
-    # adds the transaction to the front of the transactions array
     @transactions.unshift({ date: date, credit: amount, balance: @balance })
   end
 
   def withdraw(amount, date)
-    # updates current balance of account
     @balance -= amount
-    # adds the transaction to the front of the transactions array
     @transactions.unshift({ date: date, debit: amount, balance: @balance })
   end
 
