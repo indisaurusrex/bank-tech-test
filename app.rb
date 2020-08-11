@@ -1,5 +1,7 @@
-require 'date'
+# frozen_string_literal: true
 
+require 'date'
+# this class is a bank account to be able to do the banking activities specified
 class BankAccount
   def initialize
     @transactions = []
