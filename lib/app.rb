@@ -5,14 +5,14 @@ require './lib/statement'
 # this class is a bank account for the customer to interact with
 class BankAccount
   attr_accessor :balance
-  
+
   def initialize
     @transactions = []
     @balance = 0
   end
 
   def deposit(amount, date)
-    raise "Please enter a positive number for the deposit amount" if amount < 0
+    raise 'Please enter a positive number for the deposit amount' if amount.negative?
 
     @balance += amount
     @transactions.unshift({ date: date, credit: amount, balance: @balance })

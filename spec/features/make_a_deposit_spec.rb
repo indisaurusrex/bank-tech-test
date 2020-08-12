@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 describe BankAccount do
-  let(:account) { BankAccount.new }
-
   describe '#deposit' do
     it 'shows a deposit on a statement' do
       account.deposit(1000, '14-01-2020')

@@ -8,7 +8,6 @@ describe BankAccount do
       end.to raise_error 'Please enter a positive number for the deposit amount'
     end
     it 'updates the balance by the deposit amount' do
-      account = BankAccount.new
       account.deposit(100, '14-01-2020')
       expect(account.balance).to eq 100
     end
