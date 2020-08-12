@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-describe BankAccount do
+xdescribe BankAccount do
   let(:account) { BankAccount.new }
 
   describe '#deposit' do
