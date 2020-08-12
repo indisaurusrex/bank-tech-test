@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './app'
+require './lib/app'
 
 describe BankAccount do
   describe '#print_statement' do

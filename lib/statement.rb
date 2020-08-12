@@ -1,29 +1,6 @@
 # frozen_string_literal: true
 
-require 'date'
-# this class is a bank account to be able to do the banking activities specified
-class BankAccount
-  def initialize
-    @transactions = []
-    @balance = 0
-  end
-
-  def deposit(amount, date)
-    @balance += amount
-    @transactions.unshift({ date: date, credit: amount, balance: @balance })
-  end
-
-  def withdraw(amount, date)
-    @balance -= amount
-    @transactions.unshift({ date: date, debit: amount, balance: @balance })
-  end
-
-  def print_statement
-    statement = Statement.new(@transactions)
-    puts statement.print
-  end
-end
-
+# this handles the formatting of the transaction data ready to be printed 
 class Statement
   def initialize(transaction_history)
     @transaction_history = transaction_history
