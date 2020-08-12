@@ -6,7 +6,7 @@ class Statement
 
   def initialize(transaction_history)
     @transaction_history = transaction_history
-    @printable_statement = ['date || credit || debit || balance']
+    @printable_statement = ["date || credit || debit || balance\n"]
   end
 
   def format_for_printing(transaction_history)
@@ -16,9 +16,9 @@ class Statement
       balance = format_balance(transaction)
 
       if transaction[:credit]
-        @printable_statement.push("#{date} || #{amount} || || #{balance}")
+        @printable_statement.push("#{date} || #{amount} || || #{balance}\n")
       else
-        @printable_statement.push("#{date} || || #{amount} || #{balance}")
+        @printable_statement.push("#{date} || || #{amount} || #{balance}\n")
       end
     end
   end
