@@ -4,6 +4,8 @@
 A bank app where you can make deposits and withdrawals, and see a statement of the transactions with dates and running balance. 
 
 ## My approach
+Made using Ruby and RSpec, this is a simple app which does a few minimal checks but mainly assumes the user will input valid information. It takes the date of the transaction with the amount, to account for transactions made before today. 
+
 BankAccount is a class that can be accessed by the user to interact with the account including making deposits and withdrawals and asking for a statement to be printed.
 
 Statement has a class of its own to handle the formatting of the data ready to be printed to the console. 
@@ -11,8 +13,6 @@ Statement has a class of its own to handle the formatting of the data ready to b
 I think that with some more attention there should be a separate Transaction class and TransactionHistory class. These will handle the storing of the transactions and the balance updates per transaction. 
 
 Currently the BankAccount class does the heavy lifting for checking the input is correct, and updating the balance as each transaction is made - which doesn't quite fit the SRP. 
-
-I think there are some 
 
 ## How to use
 ```
