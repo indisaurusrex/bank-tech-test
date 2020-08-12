@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/account_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -13,9 +15,117 @@
           null,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/lib/app.rb": {
+        "lines": [
+          null,
           null,
           1,
           1,
+          null,
+          1,
+          1,
+          5,
+          5,
+          null,
+          null,
+          1,
+          5,
+          4,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/lib/statement.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          5,
+          5,
+          null,
+          null,
+          1,
+          5,
+          5,
+          5,
+          5,
+          null,
+          5,
+          4,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          5,
+          1,
+          null,
+          null,
+          1,
+          5,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/deposit_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/features/make_a_deposit_spec.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          3,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
           1,
           1,
           1,
@@ -27,7 +137,14 @@
           2,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/features/make_a_withdrawal_spec.rb": {
+        "lines": [
           null,
+          null,
+          1,
           1,
           1,
           1,
@@ -44,43 +161,26 @@
           null
         ]
       },
-      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/app.rb": {
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/print_statement_spec.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          1,
-          3,
-          3,
-          null,
-          null,
-          1,
-          3,
-          3,
           null,
           null,
           1,
           1,
           1,
-          null,
-          null,
           1,
-          3,
-          null,
-          3,
-          4,
-          null,
-          4,
-          3,
-          null,
           1,
-          null,
           null,
           null,
           null
         ]
+      },
+      "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/withdraw_spec.rb": {
+        "lines": [
+
+        ]
       }
     },
-    "timestamp": 1597154952
+    "timestamp": 1597231686
   }
 }
