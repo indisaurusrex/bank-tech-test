@@ -21,5 +21,3 @@ describe Statement do
     end
   end
 end
-
-# 12-14, 16-17, 19, 25, 29, 33-34 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-xdescribe BankAccount do
+describe BankAccount do
   describe '#withdraw' do
     it 'reduces the balance by the required amount' do
       account = BankAccount.new
