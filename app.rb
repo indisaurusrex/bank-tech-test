@@ -19,16 +19,49 @@ class BankAccount
   end
 
   def print_statement
-    puts 'date || credit || debit || balance'
+    statement = Statement.new(@transactions)
+    puts statement.print
+  end
+end
 
-    @transactions.each do |transaction|
-      transaction_date = Date.parse(transaction[:date]).strftime('%d/%m/%Y')
+class Statement
+  def initialize(transaction_history)
+    @transaction_history = transaction_history
+    @printable_statement = ["date || credit || debit || balance"]
+  end
 
-      if transaction[:credit]
-        puts "#{transaction_date} || #{format('%.2f', transaction[:credit])} || || #{format('%.2f', transaction[:balance])}"
+  def format_for_printing(t) 
+    t.each do |transaction|
+      date = format_date(transaction)
+      amount, balance = format_transaction_amount(transaction), format_balance(transaction)
+
+      if transaction[:credit] != nil
+        @printable_statement.push("#{date} || #{amount} || || #{balance}")
       else
-        puts "#{transaction_date} || || #{format('%.2f', transaction[:debit])} || #{format('%.2f', transaction[:balance])}"
+        @printable_statement.push("#{date} || || #{amount} || #{balance}")
       end
     end
   end
+
+  def format_date(transaction)
+    return Date.parse(transaction[:date]).strftime('%d/%m/%Y')
+  end
+
+  def format_balance(transaction)
+    return '%.2f' % transaction[:balance] 
+  end
+
+  def format_transaction_amount(transaction)
+    if transaction[:credit]
+      return '%.2f' % transaction[:credit]
+    else
+      return '%.2f' % transaction[:debit]
+    end
+  end
+
+  def print
+    format_for_printing(@transaction_history)
+    return @printable_statement
+  end
+
 end
