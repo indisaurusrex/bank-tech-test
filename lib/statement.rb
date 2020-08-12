@@ -2,6 +2,8 @@
 
 # this class handles the formatting of the transaction data ready to be printed
 class Statement
+  attr_accessor :printable_statement, :transaction_history
+  
   def initialize(transaction_history)
     @transaction_history = transaction_history
     @printable_statement = ['date || credit || debit || balance']
