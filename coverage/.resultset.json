@@ -27,11 +27,12 @@
           null,
           1,
           1,
-          4,
-          4,
+          5,
+          5,
           null,
           null,
           1,
+          5,
           4,
           4,
           null,
@@ -63,6 +64,7 @@
           5,
           5,
           5,
+          5,
           null,
           5,
           4,
@@ -82,23 +84,29 @@
           null,
           1,
           5,
-          4,
-          null,
           1,
-          null,
           null,
           null,
           1,
           5,
           5,
-          null,
           null,
           null
         ]
       },
       "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/deposit_spec.rb": {
         "lines": [
-
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
         ]
       },
       "/Users/indisaurusrex/Projects/Ruby-based/bank-tech-test/spec/features/make_a_deposit_spec.rb": {
@@ -173,6 +181,6 @@
         ]
       }
     },
-    "timestamp": 1597228313
+    "timestamp": 1597231686
   }
 }

@@ -5,14 +5,14 @@ describe BankAccount do
 
   describe '#deposit' do
     it 'shows a deposit on a statement' do
-      account.deposit(1000, "14-01-2020")
+      account.deposit(1000, '14-01-2020')
       statement = <<~STATEMENT
         date || credit || debit || balance
         14/01/2020 || 1000.00 || || 1000.00
       STATEMENT
       expect { account.print_statement }.to output(statement).to_stdout
     end
-    
+
     it 'adjusts the balance by the deposited amount' do
       account.deposit(1000, '14-01-2020')
       account.deposit(100, '5-06-2020')
