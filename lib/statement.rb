@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# this handles the formatting of the transaction data ready to be printed 
+# this class handles the formatting of the transaction data ready to be printed 
 class Statement
   def initialize(transaction_history)
     @transaction_history = transaction_history
@@ -12,7 +12,7 @@ class Statement
       date = format_date(transaction)
       amount, balance = format_transaction_amount(transaction), format_balance(transaction)
 
-      if transaction[:credit] != nil
+      if transaction[:credit]
         @printable_statement.push("#{date} || #{amount} || || #{balance}")
       else
         @printable_statement.push("#{date} || || #{amount} || #{balance}")
