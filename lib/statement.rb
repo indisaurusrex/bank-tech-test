@@ -8,8 +8,9 @@ class Statement
     @history = transaction_history
   end 
 
+  # sorts the array and calls for the formatting to be done
   def print
-    history = @history.sort_by{ |transaction| transaction[:date] }.reverse!
+    history = @history.sort_by { |transaction| transaction[:date] }.reverse!
     format_for_printing(history)
   end
 
