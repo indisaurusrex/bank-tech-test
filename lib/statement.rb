@@ -5,11 +5,12 @@ class Statement
   attr_accessor :transaction_history
 
   def initialize(transaction_history)
-    @transaction_history = transaction_history
+    @history = transaction_history
   end 
 
   def print
-    format_for_printing(@transaction_history)
+    history = @history.sort_by{ |transaction| transaction[:date] }.reverse!
+    format_for_printing(history)
   end
 
   private
