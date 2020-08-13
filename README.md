@@ -47,3 +47,35 @@ Style/FormatStringToken: Prefer annotated tokens (like %<foo>s) over unannotated
     lib/statement.rb:29:13
     lib/statement.rb:33:20
     lib/statement.rb:34:20
+
+## Extra specifications
+1. 
+As a user, I may want to add in a transaction that was missing, 
+by passing it with a date in the past (eg. account.deposit(50, '03/08/2020')).
+This should in turn readjust my statement so that the transaction shows in the right place, 
+and the balances are still correct. 
+Does your code currently make this easy to add in? What would need change in your code to make this possible?
+
+2. 
+As a user, I’d like to be able to choose some options for my statement.
+If I don’t pass options it’s the default statement (like in the specs).
+Here are some options I can choose:
+Show dates in american format instead (mm/dd/yyyy instead of dd/mm/yyyy)
+Have both debit and credit appear in the same column. Debit show between parentheses. 
+The column name is transaction
+Right to left -> the order of columns is reversed
+
+Example - If this is the basic statement:
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+this would be the same statement, with all options active:
+```
+balance || transaction || date
+2500.00 || (500.00) || 01/14/2012
+3000.00 || 2000.00 || 01/13/2012
+1000.00 || 1000.00 || 01/10/2012
+```
