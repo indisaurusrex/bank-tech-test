@@ -6,11 +6,13 @@ class Statement
 
   def initialize(transaction_history)
     @transaction_history = transaction_history
-  end
+  end 
 
   def print
     format_for_printing(@transaction_history)
   end
+
+  private
 
   def format_for_printing(transaction_history)
     printable_statement = ["date || credit || debit || balance\n"]
