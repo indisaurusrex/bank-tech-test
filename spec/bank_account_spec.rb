@@ -10,14 +10,13 @@ describe BankAccount do
       end.to output("date || credit || debit || balance\n").to_stdout
     end
 
-    it 'prints the statement' do
-      account.deposit(10, '14-01-2020')
-      statement_double = double :statement, get: '["date || credit || debit || balance\n", "14/01/2020 || 10.00 || || 10.00\n"]'
+    it 'prints the statement it is given to the console' do
+      statement_double = double :statement, :print => ["date || credit || debit || balance\n", "14/01/2020 || 10.00 || || 10.00\n"]
       printed_statement = <<~STATEMENT
         date || credit || debit || balance
         14/01/2020 || 10.00 || || 10.00
       STATEMENT
-      expect{ account.print_statement }.to output(printed_statement).to_stdout
+      expect{ account.print_statement(statement_double) }.to output(printed_statement).to_stdout
     end
   end
 

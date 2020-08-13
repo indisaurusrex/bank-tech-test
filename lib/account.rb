@@ -23,8 +23,7 @@ class BankAccount
     @transactions.unshift({ date: date, debit: amount, balance: @balance })
   end
 
-  def print_statement
-    statement = Statement.new(@transactions)
+  def print_statement(statement = Statement.new(@transactions))
     puts statement.print
   end
 end
