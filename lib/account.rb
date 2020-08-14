@@ -2,6 +2,7 @@
 
 require 'date'
 require './lib/statement'
+require './lib/transaction_history'
 # this class is a bank account for the customer to interact with
 class BankAccount
   attr_reader :transactions
