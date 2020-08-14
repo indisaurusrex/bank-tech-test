@@ -6,32 +6,14 @@ class Statement
 
   def initialize(transaction_history)
     @history = transaction_history
-    @balance = 0
   end
 
   def print
-    balanced = calculate_balances(sorter)
-    reverse_sort_balanced = sort_balanced(balanced)
-    format_for_printing(reverse_sort_balanced)
+    reversed = sort_balanced(@history)
+    format_for_printing(reversed)
   end
 
   private
-
-  def calculate_balances(sorted_history)
-    sorted_history if sorted_history.empty?
-    sorted_history.each do |transaction|
-      if transaction[:type] == 'deposit'
-       @balance += transaction[:amount]
-      else
-        @balance -= transaction[:amount]
-      end
-      transaction[:balance] = @balance
-    end
-  end
-
-  def sorter
-    @history.sort_by { |transaction| transaction[:date] }
-  end
 
   def sort_balanced(history)
     history.sort_by { |transaction| transaction[:date] }.reverse!
