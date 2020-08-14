@@ -30,16 +30,16 @@ describe BankAccount do
         BankAccount.new.deposit(-1000, '14-01-2020')
       end.to raise_error 'Please enter a positive number for the deposit amount'
     end
-    xit 'updates the balance by the deposit amount' do
+    it 'adds a deposit to the transaction history' do
       account.deposit(100, '14-01-2020')
-      expect(account.balance).to eq 100
+      expect(account.transactions).to include({date: '14-01-2020', amount: 100, type: 'deposit'})
     end
   end
 
   describe '#withdraw' do
-    xit 'reduces the balance by the amount' do
+    it 'adds a withdrawal to the transaction history' do
       account.withdraw(100, '14-01-2020')
-      expect(account.balance).to eq(-100)
+      expect(account.transactions).to include({date: '14-01-2020', amount: 100, type: 'withdrawal'})
     end
   end
 end
