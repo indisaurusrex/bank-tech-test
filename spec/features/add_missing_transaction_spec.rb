@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-xdescribe BankAccount do
+describe BankAccount do
   describe '#deposit' do
     it 'shows a missing deposit and corrects the balances' do
       account.deposit(1000, '14-01-2020')
