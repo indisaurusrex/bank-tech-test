@@ -13,14 +13,13 @@ class BankAccount
 
   def deposit(amount, date)
     raise 'Please enter a positive number for the deposit amount' if amount.negative?
-
     @balance += amount
-    @transactions.push({ date: date, credit: amount, balance: @balance })
+    @transactions.push({ date: date, amount: amount, balance: @balance, type: 'deposit' })
   end
 
   def withdraw(amount, date)
     @balance -= amount
-    @transactions.push({ date: date, debit: amount, balance: @balance })
+    @transactions.push({ date: date, amount: amount, balance: @balance, type: 'withdrawal' })
   end
 
   def print_statement(statement = Statement.new(@transactions))

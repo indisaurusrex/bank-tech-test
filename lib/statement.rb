@@ -10,6 +10,7 @@ class Statement
 
   # sorts the array and calls for the formatting to be done
   def print
+    # balanced_hist = balancer(@history) if @history.length > 1
     history = @history.sort_by { |transaction| transaction[:date] }.reverse!
     format_for_printing(history)
   end
@@ -24,7 +25,7 @@ class Statement
       amount = format_transaction_amount(transaction)
       balance = format_balance(transaction)
 
-      if transaction[:credit]
+      if transaction[:type] == 'deposit'
         printable_statement.push("#{date} || #{amount} || || #{balance}\n")
       else
         printable_statement.push("#{date} || || #{amount} || #{balance}\n")
@@ -43,7 +44,7 @@ class Statement
   end
 
   def format_transaction_amount(transaction)
-    return format('%.2f', transaction[:credit]) if transaction[:credit]
-    return format('%.2f', transaction[:debit]) if transaction[:debit]
+    return format('%.2f', transaction[:amount]) 
+   
   end
 end
