@@ -1,7 +1,8 @@
 # Bank tech test
 
 ## About this app
-A bank app where you can make deposits and withdrawals, and see a statement of the transactions with dates and running balance. 
+A bank app where you can make deposits and withdrawals, and see a statement of the transactions with dates and running balance.
+You can add the transactions in any order and they will be sorted correctly on your statement.
 
 ## My approach
 Made using Ruby and RSpec, this is a simple app which does a few minimal checks but mainly assumes the user will input valid information. It takes the date of the transaction with the amount, to account for transactions made before today. 
@@ -55,6 +56,7 @@ by passing it with a date in the past (eg. account.deposit(50, '03/08/2020')).
 This should in turn readjust my statement so that the transaction shows in the right place, 
 and the balances are still correct. 
 Does your code currently make this easy to add in? What would need change in your code to make this possible?
+/ This feature has now been added
 
 2. 
 As a user, I’d like to be able to choose some options for my statement.

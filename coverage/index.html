@@ -14,7 +14,7 @@
       <img src="./assets/0.12.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-14T08:45:06+01:00">2020-08-14T08:45:06+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-08-14T08:49:15+01:00">2020-08-14T08:49:15+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.95
+         2.92
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>111</b> relevant lines,
-    <span class="green"><b>111</b> lines covered</span> and
+    <b>110</b> relevant lines,
+    <span class="green"><b>110</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -84,9 +84,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#cec730d59bd7cfece5b9c904d68713a7266199d2" class="src_link" title="lib/statement.rb">lib/statement.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">72</td>
-            <td class="cell--number">37</td>
-            <td class="cell--number">37</td>
+            <td class="cell--number">68</td>
+            <td class="cell--number">36</td>
+            <td class="cell--number">36</td>
             <td class="cell--number">0</td>
             <td class="cell--number">5.92</td>
             
@@ -484,8 +484,8 @@
     
 
     <div class="t-line-summary">
-      <b>37</b> relevant lines.
-      <span class="green"><b>37</b> lines covered</span> and
+      <b>36</b> relevant lines.
+      <span class="green"><b>36</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -624,23 +624,45 @@
 
             
 
-            <code class="ruby">  def sorter</code>
+            <code class="ruby">  def print</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="14" data-linenumber="13">
-            <span class="hits">14</span>
+          <li class="covered" data-hits="6" data-linenumber="13">
+            <span class="hits">6</span>
             
 
             
 
-            <code class="ruby">    @history.sort_by { |transaction| transaction[:date] }</code>
+            <code class="ruby">    balanced = calculate_balances(sorter)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="covered" data-hits="6" data-linenumber="14">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">    reverse_sort_balanced = sort_balanced(balanced)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="6" data-linenumber="15">
+            <span class="hits">6</span>
+            
+
+            
+
+            <code class="ruby">    format_for_printing(reverse_sort_balanced)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -651,7 +673,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -662,35 +684,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="18">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def sort_balanced(history)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="14" data-linenumber="17">
-            <span class="hits">14</span>
-            
-
-            
-
-            <code class="ruby">    history.sort_by { |transaction| transaction[:date] }.reverse!</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="18">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
+            <code class="ruby">  private</code>
           </li>
         </div>
       
@@ -712,7 +712,7 @@
 
             
 
-            <code class="ruby">  def balancer(sorted_t_h)</code>
+            <code class="ruby">  def calculate_balances(sorted_history)</code>
           </li>
         </div>
       
@@ -723,7 +723,7 @@
 
             
 
-            <code class="ruby">    if sorted_t_h.length == 0</code>
+            <code class="ruby">    if sorted_history.length == 0</code>
           </li>
         </div>
       
@@ -734,7 +734,7 @@
 
             
 
-            <code class="ruby">      return sorted_t_h</code>
+            <code class="ruby">      return sorted_history</code>
           </li>
         </div>
       
@@ -756,7 +756,7 @@
 
             
 
-            <code class="ruby">      sorted_t_h.each do |transaction|</code>
+            <code class="ruby">      sorted_history.each do |transaction|</code>
           </li>
         </div>
       
@@ -855,7 +855,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -866,29 +866,29 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="35">
-            
-            
-
-            
-
-            <code class="ruby">  # sorts the array and calls for the formatting to be done</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="36">
+          <li class="covered" data-hits="1" data-linenumber="35">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">  def print</code>
+            <code class="ruby">  def sorter</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="14" data-linenumber="36">
+            <span class="hits">14</span>
+            
+
+            
+
+            <code class="ruby">    @history.sort_by { |transaction| transaction[:date] }</code>
           </li>
         </div>
       
@@ -899,7 +899,7 @@
 
             
 
-            <code class="ruby">    # balanced_hist = balancer(@history) if @history.length &gt; 1</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -910,56 +910,34 @@
 
             
 
-            <code class="ruby">    # history = @history.sort_by { |transaction| transaction[:date] }.reverse!</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="39">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="1" data-linenumber="39">
+            <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">    sorted = sorter</code>
+            <code class="ruby">  def sort_balanced(history)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="40">
-            <span class="hits">6</span>
+          <li class="covered" data-hits="14" data-linenumber="40">
+            <span class="hits">14</span>
             
 
             
 
-            <code class="ruby">    balanced = balancer(sorted)</code>
+            <code class="ruby">    history.sort_by { |transaction| transaction[:date] }.reverse!</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="6" data-linenumber="41">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    reverse_sort_balanced = sort_balanced(balanced)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="6" data-linenumber="42">
-            <span class="hits">6</span>
-            
-
-            
-
-            <code class="ruby">    format_for_printing(reverse_sort_balanced)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -970,7 +948,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -981,29 +959,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  private</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="46">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
+          <li class="covered" data-hits="1" data-linenumber="43">
             <span class="hits">1</span>
             
 
@@ -1014,7 +970,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="48">
+          <li class="covered" data-hits="8" data-linenumber="44">
             <span class="hits">8</span>
             
 
@@ -1025,7 +981,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
@@ -1036,7 +992,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="50">
+          <li class="covered" data-hits="8" data-linenumber="46">
             <span class="hits">8</span>
             
 
@@ -1047,7 +1003,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="51">
+          <li class="covered" data-hits="10" data-linenumber="47">
             <span class="hits">10</span>
             
 
@@ -1058,7 +1014,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="52">
+          <li class="covered" data-hits="10" data-linenumber="48">
             <span class="hits">10</span>
             
 
@@ -1069,7 +1025,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="53">
+          <li class="covered" data-hits="10" data-linenumber="49">
             <span class="hits">10</span>
             
 
@@ -1080,7 +1036,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="54">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -1091,7 +1047,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="55">
+          <li class="covered" data-hits="10" data-linenumber="51">
             <span class="hits">10</span>
             
 
@@ -1102,7 +1058,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="56">
+          <li class="covered" data-hits="8" data-linenumber="52">
             <span class="hits">8</span>
             
 
@@ -1113,7 +1069,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="53">
             
             
 
@@ -1124,7 +1080,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="58">
+          <li class="covered" data-hits="2" data-linenumber="54">
             <span class="hits">2</span>
             
 
@@ -1135,7 +1091,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="59">
+          <li class="never" data-hits="" data-linenumber="55">
             
             
 
@@ -1146,7 +1102,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="60">
+          <li class="never" data-hits="" data-linenumber="56">
             
             
 
@@ -1157,7 +1113,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="61">
+          <li class="never" data-hits="" data-linenumber="57">
             
             
 
@@ -1168,13 +1124,57 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="8" data-linenumber="62">
+          <li class="covered" data-hits="8" data-linenumber="58">
             <span class="hits">8</span>
             
 
             
 
             <code class="ruby">    printable_statement</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="60">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="61">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def format_date(transaction)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="10" data-linenumber="62">
+            <span class="hits">10</span>
+            
+
+            
+
+            <code class="ruby">    Date.parse(transaction[:date]).strftime(&#39;%d/%m/%Y&#39;)</code>
           </li>
         </div>
       
@@ -1207,18 +1207,18 @@
 
             
 
-            <code class="ruby">  def format_date(transaction)</code>
+            <code class="ruby">  def format_money(money)</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="10" data-linenumber="66">
-            <span class="hits">10</span>
+          <li class="covered" data-hits="20" data-linenumber="66">
+            <span class="hits">20</span>
             
 
             
 
-            <code class="ruby">    Date.parse(transaction[:date]).strftime(&#39;%d/%m/%Y&#39;)</code>
+            <code class="ruby">    format(&#39;%.2f&#39;, money)</code>
           </li>
         </div>
       
@@ -1235,50 +1235,6 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="68">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="69">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">  def format_money(money)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="20" data-linenumber="70">
-            <span class="hits">20</span>
-            
-
-            
-
-            <code class="ruby">    format(&#39;%.2f&#39;, money)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="71">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="72">
             
             
 

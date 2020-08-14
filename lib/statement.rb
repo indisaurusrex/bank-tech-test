@@ -9,19 +9,19 @@ class Statement
     @balance = 0
   end 
 
-  def sorter
-    @history.sort_by { |transaction| transaction[:date] }
+  def print
+    balanced = calculate_balances(sorter)
+    reverse_sort_balanced = sort_balanced(balanced)
+    format_for_printing(reverse_sort_balanced)
   end
 
-  def sort_balanced(history)
-    history.sort_by { |transaction| transaction[:date] }.reverse!
-  end
+  private
 
-  def balancer(sorted_t_h)
-    if sorted_t_h.length == 0
-      return sorted_t_h
+  def calculate_balances(sorted_history)
+    if sorted_history.length == 0
+      return sorted_history
     else
-      sorted_t_h.each do |transaction|
+      sorted_history.each do |transaction|
         if transaction[:type] == 'deposit'
           @balance += transaction[:amount]
         else
@@ -30,19 +30,15 @@ class Statement
         transaction[:balance] = @balance
       end
     end
-
-  end
-  # sorts the array and calls for the formatting to be done
-  def print
-    # balanced_hist = balancer(@history) if @history.length > 1
-    # history = @history.sort_by { |transaction| transaction[:date] }.reverse!
-    sorted = sorter
-    balanced = balancer(sorted)
-    reverse_sort_balanced = sort_balanced(balanced)
-    format_for_printing(reverse_sort_balanced)
   end
 
-  private
+  def sorter
+    @history.sort_by { |transaction| transaction[:date] }
+  end
+
+  def sort_balanced(history)
+    history.sort_by { |transaction| transaction[:date] }.reverse!
+  end
 
   def format_for_printing(transaction_history)
     printable_statement = ["date || credit || debit || balance\n"]
