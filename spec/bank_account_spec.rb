@@ -11,8 +11,8 @@ describe BankAccount do
     end
 
     it 'prints the statement it is given to the console' do
-      statement_double = double :statement, 
-                                :print => [
+      statement_double = double :statement,
+                                print: [
                                   "date || credit || debit || balance\n",
                                   "14/01/2020 || 10.00 || || 10.00\n"
                                 ]
@@ -32,14 +32,14 @@ describe BankAccount do
     end
     it 'adds a deposit to the transaction history' do
       account.deposit(100, '14-01-2020')
-      expect(account.transactions).to include({date: '14-01-2020', amount: 100, type: 'deposit'})
+      expect(account.transactions).to include({ date: '14-01-2020', amount: 100, type: 'deposit' })
     end
   end
 
   describe '#withdraw' do
     it 'adds a withdrawal to the transaction history' do
       account.withdraw(100, '14-01-2020')
-      expect(account.transactions).to include({date: '14-01-2020', amount: 100, type: 'withdrawal'})
+      expect(account.transactions).to include({ date: '14-01-2020', amount: 100, type: 'withdrawal' })
     end
   end
 end

@@ -7,7 +7,7 @@ class Statement
   def initialize(transaction_history)
     @history = transaction_history
     @balance = 0
-  end 
+  end
 
   def print
     balanced = calculate_balances(sorter)
@@ -18,17 +18,14 @@ class Statement
   private
 
   def calculate_balances(sorted_history)
-    if sorted_history.length == 0
-      return sorted_history
-    else
-      sorted_history.each do |transaction|
-        if transaction[:type] == 'deposit'
-          @balance += transaction[:amount]
-        else
-          @balance -= transaction[:amount]
-        end
-        transaction[:balance] = @balance
+    sorted_history if sorted_history.empty?
+    sorted_history.each do |transaction|
+      if transaction[:type] == 'deposit'
+       @balance += transaction[:amount]
+      else
+        @balance -= transaction[:amount]
       end
+      transaction[:balance] = @balance
     end
   end
 

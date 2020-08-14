@@ -5,13 +5,14 @@ require './lib/statement'
 # this class is a bank account for the customer to interact with
 class BankAccount
   attr_reader :transactions
-  
+
   def initialize
     @transactions = []
   end
 
   def deposit(amount, date)
     raise 'Please enter a positive number for the deposit amount' if amount.negative?
+
     @transactions.push({ date: date, amount: amount, type: 'deposit' })
   end
 

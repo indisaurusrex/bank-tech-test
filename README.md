@@ -41,13 +41,7 @@ rubocop
 ### Test coverage
 Test coverage currently at 100%. If you pend the feature tests, the files within lib have 100% coverage, but the feature test files come up as having less - I'm not sure how to cover the tests themselves so have left this as it is. 
 
-Rubocop is unhappy with my formatting and has 3 offenses. I've tried to fix this but can't get the annotated tokens to work, so left in for now. This is the message:
-Style/FormatStringToken: Prefer annotated tokens (like %<foo>s) over unannotated tokens (like %s).
-    format('%.2f', transaction[:balance])
-    for the following lines: 
-    lib/statement.rb:29:13
-    lib/statement.rb:33:20
-    lib/statement.rb:34:20
+Rubocop has 4 offenses that I cannot currently fix. Still working on them.
 
 ## Extra specifications
 1. 
