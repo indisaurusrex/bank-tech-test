@@ -9,31 +9,42 @@ class Statement
   end
 
   def print
-    reversed = sort_balanced(@history)
+    reversed = reverse_sort(@history)
     format_for_printing(reversed)
   end
 
   private
 
-  def sort_balanced(history)
+  def reverse_sort(history)
     history.sort_by { |transaction| transaction[:date] }.reverse!
   end
 
   def format_for_printing(transaction_history)
     printable_statement = ["date || credit || debit || balance\n"]
-
+    printable_transactions = []
+    
     transaction_history.each do |transaction|
-      date = format_date(transaction)
-      amount = format_money(transaction[:amount])
-      balance = format_money(transaction[:balance])
+      readable_transaction = make_it_readable(transaction)
+      printable_transactions = add_table_lines(readable_transaction)
+    end
 
-      if transaction[:type] == 'deposit'
+    printable_statement += printable_transactions
+  end
+
+  def make_it_readable(transaction)
+    transaction[:date] = format_date(transaction)
+    transaction[:amount] = format_money(transaction[:amount])
+    transaction[:balance] = format_money(transaction[:balance])
+    transaction
+  end
+
+  def add_table_lines(readable_transaction)
+    printable_statement = []
+      if readable_transaction[:type] == 'deposit'
         printable_statement.push("#{date} || #{amount} || || #{balance}\n")
       else
         printable_statement.push("#{date} || || #{amount} || #{balance}\n")
       end
-    end
-
     printable_statement
   end
 
